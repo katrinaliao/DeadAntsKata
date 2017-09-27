@@ -25,7 +25,7 @@ namespace DeadAntsKata
                 {
                     return 0;
                 }
-                var genereted = str.Replace("ant", "").ToCharArray();
+                var genereted = str.Replace("ant", "");
                 var factor = new string[] { "a", "n", "t" };
                 return factor.Select(x => genereted.Count(y => y.ToString().Contains(x))).Max();
             }
