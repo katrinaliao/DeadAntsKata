@@ -26,14 +26,9 @@ namespace DeadAntsKata
                     return 0;
                 }
                 var genereted = str.Replace("ant", "").ToCharArray();
-
-                var countA = genereted.Count(y => y.ToString().Contains("a"));
-                var countN = genereted.Count(y => y.ToString().Contains("n"));
-                var countT = genereted.Count(y => y.ToString().Contains("t"));
-
-                return new List<int>() { countA, countN, countT }.Max();
+                var factor = new string[] { "a", "n", "t" };
+                return factor.Select(x => genereted.Count(y => y.ToString().Contains(x))).Max();
             }
-
         }
     }
 }
